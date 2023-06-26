@@ -40,4 +40,23 @@ python one_line.py [source_file_name]
     print(ctx.s)
     ```
 
-4. 使用非__init__方法初始化类的属性
+4. 两个函数递归调用
+
+    例如
+    ``` python
+        def f(n):
+            if n == 0:
+                return 1
+            return g(n-1)*n
+        def g(n):
+            return f(n-1)
+    ```
+    需要改写为
+    ``` python
+        def f(n):
+            if n == 0:
+                return 1
+            return f(n-2)*n
+    ```
+
+5. 使用非__init__方法初始化类的属性
